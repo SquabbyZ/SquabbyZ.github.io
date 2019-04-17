@@ -275,9 +275,41 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -351,6 +383,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/17/Markdown/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/17/Markdown/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -408,14 +450,17 @@
       
         
           
-            <h1 id="1-什么是-Markdown"><a href="#1-什么是-Markdown" class="headerlink" title="1.什么是 Markdown"></a>1.什么是 Markdown</h1><p>Markdown 是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。<br>深入学习请移步 <a href="http://www.markdown.cn/" target="_blank">Markdown 官网</a></p>
-<h1 id="2-Markdown-语法的优缺点"><a href="#2-Markdown-语法的优缺点" class="headerlink" title="2.Markdown 语法的优缺点"></a>2.Markdown 语法的优缺点</h1><p>优点：</p>
-<p>1、因为是纯文本，所以只要支持 Markdown 的地方都能获得一样的编辑效果，可以让作者摆脱排版的困扰，专心写作。<br>2、操作简单。比如:WYSIWYG 编辑时标记个标题，先选中内容，再点击导航栏的标题按钮，选择几级标题。要三个步骤。而 Markdown 只需要在标题内容前加#即可</p>
-<p>缺点：</p>
-<p>1、需要记一些语法（当然，是很简单。五分钟学会）。<br>2、有些平台不支持 Markdown 编辑模式。</p>
-<h1 id="3-Markdown-简易指令，轻松上手"><a href="#3-Markdown-简易指令，轻松上手" class="headerlink" title="3.Markdown 简易指令，轻松上手"></a>3.Markdown 简易指令，轻松上手</h1><h2 id="标题写法"><a href="#标题写法" class="headerlink" title="标题写法"></a>标题写法</h2><p><a href="http://baidu.com" target="_blank">超链接名</a> # 这是一级标题 ## 这是二级标题 ### 这是三级标题 #### 这是四级标题 ##### 这是五级标题 ###### 这是六级标题</p>
-
-          
+          1.什么是 MarkdownMarkdown 是一种纯文本格式的标记语言。通过简单的标记语法，它可以使普通文本内容具有一定的格式。深入学习请移步 Markdown 官网
+2.Markdown 语法的优缺点优点：
+1、因为是纯文本，所以只要支持 Markdown 的地方都能获得一样的编辑效果，可以让作
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/17/Markdown/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -517,6 +562,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/16/Hexostudy/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/16/Hexostudy/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -574,109 +629,17 @@
       
         
           
-            <h2 id="什么是-Hexo"><a href="#什么是-Hexo" class="headerlink" title="什么是 Hexo"></a>什么是 Hexo</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<h2 id="Hexo-搭建步骤"><a href="#Hexo-搭建步骤" class="headerlink" title="Hexo 搭建步骤"></a>Hexo 搭建步骤</h2><ol>
-<li>安装 Git bash (非必须,主要针对于 windows 中不习惯使用 cmd ,编译器是 VsCode 也可以不用这个)</li>
-<li>安装 Node.js</li>
-<li>安装 Hexo</li>
-<li>Github 上创建个人仓库</li>
-<li>生成 SSH 添加到 GitHub</li>
-<li>将 hexo 部署到 GitHub</li>
-<li>将 yourname.github.io 绑定到个人域名</li>
-<li>发布文章</li>
-</ol>
-<h3 id="1-安装-Git"><a href="#1-安装-Git" class="headerlink" title="1. 安装 Git"></a>1. 安装 Git</h3><p>Git 是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。也就是用来管理你的 hexo 博客文章，上传到 GitHub 的工具。Git 非常强大，我觉得建议每个人都去了解一下。廖雪峰老师的 Git 教程写的非常好，大家可以了解一下。Git 教程</p>
-<p>windows：到 git 官网上下载,Download git,下载后会有一个 Git Bash 的命令行工具，以后就用这个工具来使用 git。</p>
-<p>linux：对 linux 来说实在是太简单了，因为最早的 git 就是在 linux 上编写的，只需要一行代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure>
-<p>安装好后，用 git –version 来查看一下版本</p>
-<h3 id="2-安装-node-js"><a href="#2-安装-node-js" class="headerlink" title="2.安装 node.js"></a>2.安装 node.js</h3><p>Hexo 是基于 nodeJS 编写的，所以需要安装一下 nodeJs 和里面的 npm 工具。</p>
-<p>windows：nodejs 选择 LTS 版本就行了。</p>
-<p>linux：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 sudo apt-get install nodejs</span><br><span class="line">2 sudo apt-get install npm</span><br></pre></td></tr></table></figure>
-<p>安装完后，打开命令行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line"></span><br><span class="line">1 sudo apt-get install nodejs</span><br><span class="line">2 sudo apt-get install npm</span><br></pre></td></tr></table></figure>
-<p>检查一下有没有安装成功</p>
-<p>顺便说一下，windows 在 git 安装完后，就可以直接使用 git bash 来敲命令行了，不用自带的 cmd，cmd 有点难用。</p>
-<h3 id="3-安装-Hexo"><a href="#3-安装-Hexo" class="headerlink" title="3.安装 Hexo"></a>3.安装 Hexo</h3><p>前面 git 和 nodejs 安装好后，就可以安装 hexo 了，你可以先创建一个文件夹 blog，然后 cd 到这个文件夹下（或者在这个文件夹下直接右键 git bash 打开）。</p>
-<p>输入命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>安装完成之后,有两种方法生成 Hexo demo</p>
-<p>1.自定义创建好一个文件夹，然后在该文件夹下的根目录中打开 Git bash ,或者你使用的编译器是 VS Code 可以直接将该文件夹托人到 VS Code 编辑器中，然后使用命令 Ctrl + ~ 打开终端窗口,输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init (简写 hexo i)</span><br></pre></td></tr></table></figure>
-<p>只需等待 demo 自己加载完即可</p>
-<p>2.相对于方法一来说比较简便,使用 一行代码直接在你当前目录下生成 Hexo Demo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init myBlog</span><br></pre></td></tr></table></figure>
-<p>其中 myBlog 是你 Hexo demo 的文件夹的名字。</p>
-<p>新建完成后，指定文件夹目录下有：</p>
-<p>node_modules: 依赖包<br>public：存放生成的页面<br>scaffolds：生成文章的一些模板<br>source：用来存放你的文章<br>themes：主题<br><strong> _config.yml: 博客的配置文件</strong></p>
-<p>再使用命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g (这个是简写,原本的代码为 hexo generate)</span><br></pre></td></tr></table></figure>
-<p>然后再使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s (这个是简写,原本的代码为 hexo server / hexo serve ),默认的端口是 4000,你也可以写成 hexo s -p 8080 ,自己定义本地起 hexo 服务的端口号</span><br></pre></td></tr></table></figure>
-<p>这样你就可以看到在 hexo 本地跑起来的服务了,特别说明下,在本地展示的效果方便于开发，可以实时的看到你所修改的博客界面。</p>
-<h3 id="4-如何将-github-和-hexo-联系起来"><a href="#4-如何将-github-和-hexo-联系起来" class="headerlink" title="4.如何将 github 和 hexo 联系起来?"></a>4.如何将 github 和 hexo 联系起来?</h3><h5 id="1-你需要先配置一下-SSH-key"><a href="#1-你需要先配置一下-SSH-key" class="headerlink" title="1. 你需要先配置一下 SSH key"></a>1. 你需要先配置一下 SSH key</h5><p>为什么要配置这个呢？因为你提交代码肯定要拥有你的 github 权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用 ssh key 来解决本地和服务器的连接问题。</p>
-<blockquote>
-<p>a. 重新打开 Git 命令窗口，输入下面命令:</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"git@github.com"</span> //Github 的注册邮箱地址</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>b. 一路 Enter 过来就好，得到的信息如下:</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Your public key has been saved <span class="keyword">in</span> /c/Users/user/.ssh/id_rsa.pub.</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>找到该文件并打开，复制里面的所有内容，然后进入 Sign in to GitHub：<a href="https://github.com/settings/ssh" target="_blank" rel="noopener">https://github.com/settings/ssh</a></p>
-</blockquote>
-<blockquote>
-<p>c. 依次执行下面步骤:<br>点击 New SSH key —— Title：blog —— Key：输入刚才复制的 —— Add SSH key</p>
-</blockquote>
-<blockquote>
-<p>d. 测试一下是否成功,输入下方命令:</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com //git@github.com</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>只要看到返回的信息中带有如下内容就说明成功了,</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi SquabbyZ! You<span class="string">'ve successfully authenticated</span></span><br></pre></td></tr></table></figure>
-<h5 id="2-设置-Git-的-user-name-和-email"><a href="#2-设置-Git-的-user-name-和-email" class="headerlink" title="2.设置 Git 的 user name 和 email"></a>2.设置 Git 的 user name 和 email</h5><p>最好是在你当前 Hexo Demo 的目录下 依次执行下面的两个指令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"SquabbyZ"</span> // 你的 github 用户名，非昵称</span><br><span class="line">git config --global user.email <span class="string">"git@github.com"</span> // 填写你的 github 注册邮箱</span><br></pre></td></tr></table></figure>
-<h5 id="3-修改参数及配置-deploy-git"><a href="#3-修改参数及配置-deploy-git" class="headerlink" title="3.修改参数及配置 deploy-git"></a>3.修改参数及配置 deploy-git</h5><blockquote>
-<p>a.修改参数<br>下面来简单介绍下 Hexo 项目中的配置文件 _config.yml<br>Hexo 中的一些基本配置都需要在该文件里完成,这里只介绍简单的一些配置项</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>① title: SquabbyZ 的小黑屋 //你自己博客的名字<br>② subtitle: 技术博客 //博客副标题<br>③ description: 一只致力于成为全栈的小胖纸 //你博客的描述<br>④ author: Squabby Zhu //博客的作者</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>然后把配置文件下拉到最低下后,还有一些配置项需要去修改</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>⑤ theme: next //主题文件夹的名字,关于更换主题内容可以直接点击更换主题<br>⑥ deploy: //这里的配置,就是跟 Github 上你要把这个 demo 存入到仓库的配置<br>type: git //类型 github<br>repo: ssh:<a href="mailto://git@github.com" target="_blank" rel="noopener">//git@github.com</a>/SquabbyZ/SquabbyZ.github.io.git<br>//仓库地址，必须这样写 ssh:<a href="mailto://git@github.com" target="_blank" rel="noopener">//git@github.com</a>/yourname/yourname.github.io.git ,注意这里的地址不是昵称。<br>branch: master //仓库分支为:主分支<br>上面这些配置好后,可以在 hexo 本地服务中看到除了 deploy 中修改外的其他修改的内容。</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>b.使用 deploy-git 工具,将本地做好的博客上传到 github 仓库中，更新仓库展示内容</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>先下载插件 deploy-git，指令如下:</p>
-</blockquote>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<blockquote>
-<blockquote>
-<p>插件下载完成后,按顺序输入如下命令:</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>① hexo clean //清除了你之前生成的东西，也可以不加<br>② hexo generate //顾名思义，生成静态文章，可以用 hexo g 缩写<br>③ hexo deploy //部署文章，可以用 hexo d 缩写</p>
-</blockquote>
-</blockquote>
-
-          
+          什么是 HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
+Hexo 搭建步骤
+安装 Git bash (非必须,主要针对于 windows 中不习惯使用 cmd ,编译器是 VsCode 也可以
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/16/Hexostudy/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -778,6 +741,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/16/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/16/hello-world/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -835,17 +808,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;My New Post&quot;</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/16/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -965,6 +936,34 @@
             </div>
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/SquabbyZ" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/6823941729" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="18833527317@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.yuque.com/zhuhaifeng" target="_blank" title="语雀">
+                      
+                        <i class="fa fa-fw fa-globe"></i>语雀</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -1177,9 +1176,348 @@
 
 
 
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'zltjehaIcn91K3RV3GcaXydy-gzGzoHsz',
+        appKey: 'H3DpVurD8TAEz6g6Li4kM6Wx',
+        placeholder: '欢迎每位到来的童鞋,提供宝贵的意见 :)',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 
