@@ -101,14 +101,14 @@
 <meta name="description" content="什么是 HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 搭建步骤 安装 Git bash (非必须,主要针对于 windows 中不习惯使用 cmd ,编译器是 VsCode 也可以不用这个) 安装 Node.js 安装 Hexo Github 上创建个人仓库 生成 SSH 添加到">
 <meta name="keywords" content="主要介绍 Hexo个人博客模板的搭建与Github的连通，以及个人域名绑定">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 入门学习">
+<meta property="og:title" content="Hexo入门学习">
 <meta property="og:url" content="http://www.zhuhaifeng.xyz/2019/04/16/Hexostudy/index.html">
 <meta property="og:site_name" content="SquabbyZ的小黑屋">
 <meta property="og:description" content="什么是 HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 搭建步骤 安装 Git bash (非必须,主要针对于 windows 中不习惯使用 cmd ,编译器是 VsCode 也可以不用这个) 安装 Node.js 安装 Hexo Github 上创建个人仓库 生成 SSH 添加到">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-17T10:24:29.861Z">
+<meta property="og:updated_time" content="2019-04-18T10:46:12.147Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo 入门学习">
+<meta name="twitter:title" content="Hexo入门学习">
 <meta name="twitter:description" content="什么是 HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo 搭建步骤 安装 Git bash (非必须,主要针对于 windows 中不习惯使用 cmd ,编译器是 VsCode 也可以不用这个) 安装 Node.js 安装 Hexo Github 上创建个人仓库 生成 SSH 添加到">
 
 
@@ -146,7 +146,7 @@
 
 
 
-  <title>Hexo 入门学习 | SquabbyZ的小黑屋</title>
+  <title>Hexo入门学习 | SquabbyZ的小黑屋</title>
   
 
 
@@ -355,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo 入门学习</h1>
+          <h1 class="post-title" itemprop="name headline">Hexo入门学习</h1>
         
 
         <div class="post-meta">
@@ -387,7 +387,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2019/04/16/Hexostudy/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/04/16/Hexostudy/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/16/Hexostudy/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -622,8 +622,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/16/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/04/16/hello-world/" rel="next" title="HelloWorld">
+                <i class="fa fa-chevron-left"></i> HelloWorld
               </a>
             
           </div>
@@ -703,12 +703,7 @@
 
   
     <div class="comments" id="comments">
-      
-        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
-        <div id="gitment-container" style="display:none"></div>
-      
     </div>
-
   
 
 
@@ -1050,54 +1045,31 @@
 
 
 
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-      <style>
-        a.gitment-editor-footer-tip { display: none; }
-        .gitment-container.gitment-footer-container { display: none; }
-      </style>
-    
-
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: window.location.pathname, 
-            owner: 'SquabbyZ',
-            repo: 'SquabbyZ.github.io',
-            
-            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-            
-            oauth: {
-            
-            
-                client_secret: 'a13676028d430b543b2de4ee0c199c388072bfee',
-            
-                client_id: 'e0d3327a27e13fc849d5'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      function showGitment(){
-        document.getElementById("gitment-display-button").style.display = "none";
-        document.getElementById("gitment-container").style.display = "block";
-        renderGitment();
-      }
-      
-      </script>
-    
 
 
 
-
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    // var GUEST = ['nick','mail','link'];
+    var GUEST = ['nick','mail'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'zltjehaIcn91K3RV3GcaXydy-gzGzoHsz',
+        appKey: 'H3DpVurD8TAEz6g6Li4kM6Wx',
+        placeholder: '欢迎每位到来的童鞋,提供宝贵的意见 :)',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
