@@ -49,6 +49,8 @@
 
 
 
+  <meta name="baidu-site-verification" content="true">
+
 
 
 
@@ -387,7 +389,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2019/04/16/Hexostudy/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/16/Hexostudy/" itemprop="commentCount"></span>
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/04/16/Hexostudy/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -703,15 +705,18 @@
 
   
     <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
     </div>
+
   
 
 
 
 
-    <div class="comments" id="gitmenthome">
-        <div id="gitment-container"></div>
-    </div>
+ 
         </div>
         
           
@@ -1059,33 +1064,6 @@
 
 
 
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    // var GUEST = ['nick','mail'];
-    var guest = 'nick,mail';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: true,
-        appId: 'zltjehaIcn91K3RV3GcaXydy-gzGzoHsz',
-        appKey: 'H3DpVurD8TAEz6g6Li4kM6Wx',
-        placeholder: '欢迎每位到来的童鞋,提供宝贵的意见 :)',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
-
-
 <!-- LOCAL: You can save these files to your site and update links -->
     
         
@@ -1093,23 +1071,49 @@
         <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
     
 <!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({
-            id: 'gitmenthome', 
+            id: window.location.pathname, 
             owner: 'SquabbyZ',
             repo: 'SquabbyZ.github.io',
+            
             lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
             oauth: {
-                redirect_protocol: '',
-                proxy_gateway: '',
-                client_secret:'a13676028d430b543b2de4ee0c199c388072bfee',
+            
+                redirect_protocol: 'http://www.zhuhaifeng.xyz',
+            
+            
+                client_secret: 'a13676028d430b543b2de4ee0c199c388072bfee',
+            
                 client_id: 'e0d3327a27e13fc849d5'
             }});
         gitment.render('gitment-container');
       }
-      renderGitment()
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
       </script>
+    
+
+
+
+
 
 
 
