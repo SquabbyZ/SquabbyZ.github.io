@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.zhuhaifeng.xyz/2019/04/16/helloworld/</loc>
+    <lastmod>2019-04-30</lastmod>
+  </url>  <url>
     <loc>http://www.zhuhaifeng.xyz/2019/04/25/echartsGraph/</loc>
     <lastmod>2019-04-29</lastmod>
   </url>  <url>
@@ -8,9 +11,6 @@
     <lastmod>2019-04-23</lastmod>
   </url>  <url>
     <loc>http://www.zhuhaifeng.xyz/2019/04/16/Hexostudy/</loc>
-    <lastmod>2019-04-18</lastmod>
-  </url>  <url>
-    <loc>http://www.zhuhaifeng.xyz/2019/04/16/hello-world/</loc>
     <lastmod>2019-04-18</lastmod>
   </url>  <url>
     <loc>http://www.zhuhaifeng.xyz/2019/04/17/Markdown/</loc>
