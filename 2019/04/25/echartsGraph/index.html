@@ -29,7 +29,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-mac-osx.min.css?v=1.0.2" rel="stylesheet">
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -995,10 +995,11 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({
-            id: window.location.pathname, 
+            // id: window.location.pathname, 
+            id:'<%= page.date %>',
             owner: 'SquabbyZ',
             repo: 'SquabbyZ.github.io',
-            redirect_uri: `http://www.zhuhaifeng.xyz/`,
+            // redirect_uri:'https://www.zhuhaifeng.xyz/',
             
             lang: "zh-Hans" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
             
