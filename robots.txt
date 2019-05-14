@@ -10,5 +10,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://www.zhuhaifeng.xyz/sitemap.xml
-Sitemap: http://www.zhuhaifeng.xyz/baidusitemap.xml
+Sitemap: http://www.zaoanx.com/sitemap.xml
+Sitemap: http://www.zaoanx.com/baidusitemap.xml
