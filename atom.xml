@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.zhuhaifeng.xyz/"/>
-  <updated>2019-05-14T07:15:39.492Z</updated>
+  <updated>2019-05-27T02:32:43.081Z</updated>
   <id>http://www.zhuhaifeng.xyz/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>regexpAll</title>
+    <link href="http://www.zhuhaifeng.xyz/regexpAll/"/>
+    <id>http://www.zhuhaifeng.xyz/regexpAll/</id>
+    <published>2019-05-27T01:58:09.000Z</published>
+    <updated>2019-05-27T02:32:43.081Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="前端常用的正则表达式大全"><a href="#前端常用的正则表达式大全" class="headerlink" title="前端常用的正则表达式大全"></a>前端常用的正则表达式大全</h1><h3 id="1-匹配用户名"><a href="#1-匹配用户名" class="headerlink" title="1. 匹配用户名"></a>1. 匹配用户名</h3><p><strong>规则描述:</strong></p><p>· 长度 4-6 位： {4,16}<br>· 字母： [a-z][a-z]<br>· 数字： [0-9]<br>· 下划线： [_]<br>· 减号： [-]</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>同心圆坐标算法</title>
