@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[elasticsearch]]></title>
+    <url>%2Felasticsearch%2F</url>
+    <content type="text"><![CDATA[elasticsearch 数据库要加入权限控制，使用的是 x-pack 插件，前端直接访问数据库的时候，只需要在 ajax 请求的加入 12345678910$.ajax(&#123; url: "ES数据库地址", type: "POST/GET", data: "传入的数据", contentType: "application/json", beforeSend: function(xhr) &#123; xhr.setRequestHeader("Authorization", `Basic $&#123;btoa("username:password")&#125;`); &#125;, success: function(result) &#123;&#125;&#125;); 会涉及到跨域的问题，要将 es 配置文件中涉及到跨域的地方打开，包括带请求头的部分]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[regexpAll]]></title>
     <url>%2FregexpAll%2F</url>
     <content type="text"><![CDATA[前端常用的正则表达式大全1. 匹配用户名规则描述: · 长度 4-6 位： {4,16}· 字母： [a-z][a-z]· 数字： [0-9]· 下划线： [_]· 减号： [-]]]></content>
