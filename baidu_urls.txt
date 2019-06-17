@@ -1,3 +1,4 @@
+http://www.zhuhaifeng.xyz/nodejsonCentos/
 http://www.zhuhaifeng.xyz/elasticsearch/
 http://www.zhuhaifeng.xyz/regexpAll/
 http://www.zhuhaifeng.xyz/echartsGraph/
