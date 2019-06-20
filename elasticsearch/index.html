@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="SquabbyZ的小黑屋">
 <meta property="og:description" content="elasticsearch 数据库要加入权限控制，使用的是 x-pack 插件，前端直接访问数据库的时候，只需要在 ajax 请求的加入 12345678910$.ajax(&amp;#123;  url: &quot;ES数据库地址&quot;,  type: &quot;POST/GET&quot;,  data: &quot;传入的数据&quot;,  contentType: &quot;application/json&quot;,  beforeSend: functio">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-14T04:16:40.733Z">
+<meta property="og:updated_time" content="2019-06-20T01:33:37.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="elasticsearch">
 <meta name="twitter:description" content="elasticsearch 数据库要加入权限控制，使用的是 x-pack 插件，前端直接访问数据库的时候，只需要在 ajax 请求的加入 12345678910$.ajax(&amp;#123;  url: &quot;ES数据库地址&quot;,  type: &quot;POST/GET&quot;,  data: &quot;传入的数据&quot;,  contentType: &quot;application/json&quot;,  beforeSend: functio">
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  119
+                  177
                 </span>
               
 
@@ -454,6 +454,9 @@
         <p>elasticsearch 数据库要加入权限控制，使用的是 x-pack 插件，前端直接访问数据库的时候，只需要在 ajax 请求的加入</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">  url: <span class="string">"ES数据库地址"</span>,</span><br><span class="line">  type: <span class="string">"POST/GET"</span>,</span><br><span class="line">  data: <span class="string">"传入的数据"</span>,</span><br><span class="line">  contentType: <span class="string">"application/json"</span>,</span><br><span class="line">  beforeSend: <span class="function"><span class="keyword">function</span>(<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">    xhr.setRequestHeader(<span class="string">"Authorization"</span>, <span class="string">`Basic <span class="subst">$&#123;btoa(<span class="string">"username:password"</span>)&#125;</span>`</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  success: <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>会涉及到跨域的问题，要将 es 配置文件中涉及到跨域的地方打开，包括带请求头的部分</p>
+<h2 id="es-数据库修改密码"><a href="#es-数据库修改密码" class="headerlink" title="es 数据库修改密码"></a>es 数据库修改密码</h2><p>这里测试的账户为: elastic</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -u elastic -XPUT <span class="string">'http://192.168.1.11:9200/_xpack/security/user/elastic/_password?pretty'</span> -H <span class="string">'Content-Type: application/json'</span> -d<span class="string">'</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">  "password" : "new_password"</span></span><br><span class="line"><span class="string">&#125;'</span></span><br></pre></td></tr></table></figure>
+<p>其中 <strong><em>192.168.1.11</em></strong>为 es 数据库的地址 IP</p>
 
       
     </div>
@@ -634,8 +637,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -725,6 +737,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#es-数据库修改密码"><span class="nav-number">1.</span> <span class="nav-text">es 数据库修改密码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -770,7 +798,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8k字</span>
+  <span class="post-count">博客全站共8.1k字</span>
 </div>
 
 
