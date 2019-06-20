@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="SquabbyZ的小黑屋">
 <meta property="og:description" content="elasticsearch 数据库要加入权限控制，使用的是 x-pack 插件，前端直接访问数据库的时候，只需要在 ajax 请求的加入 12345678910$.ajax(&amp;#123;  url: &quot;ES数据库地址&quot;,  type: &quot;POST/GET&quot;,  data: &quot;传入的数据&quot;,  contentType: &quot;application/json&quot;,  beforeSend: functio">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-20T01:33:37.384Z">
+<meta property="og:updated_time" content="2019-06-20T01:34:24.321Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="elasticsearch">
 <meta name="twitter:description" content="elasticsearch 数据库要加入权限控制，使用的是 x-pack 插件，前端直接访问数据库的时候，只需要在 ajax 请求的加入 12345678910$.ajax(&amp;#123;  url: &quot;ES数据库地址&quot;,  type: &quot;POST/GET&quot;,  data: &quot;传入的数据&quot;,  contentType: &quot;application/json&quot;,  beforeSend: functio">
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  177
+                  187
                 </span>
               
 
@@ -457,6 +457,7 @@
 <h2 id="es-数据库修改密码"><a href="#es-数据库修改密码" class="headerlink" title="es 数据库修改密码"></a>es 数据库修改密码</h2><p>这里测试的账户为: elastic</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -u elastic -XPUT <span class="string">'http://192.168.1.11:9200/_xpack/security/user/elastic/_password?pretty'</span> -H <span class="string">'Content-Type: application/json'</span> -d<span class="string">'</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">  "password" : "new_password"</span></span><br><span class="line"><span class="string">&#125;'</span></span><br></pre></td></tr></table></figure>
 <p>其中 <strong><em>192.168.1.11</em></strong>为 es 数据库的地址 IP</p>
+<p>参考地址： <a href="https://www.jianshu.com/p/2ecac3ae1b67" target="_blank" rel="noopener">https://www.jianshu.com/p/2ecac3ae1b67</a></p>
 
       
     </div>
