@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.zhuhaifeng.xyz/Nginx/</loc>
+    
+    <lastmod>2019-06-23T07:18:37.546Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.zhuhaifeng.xyz/elasticsearch/</loc>
     
     <lastmod>2019-06-20T01:34:24.321Z</lastmod>
