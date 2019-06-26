@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="SquabbyZ的小黑屋">
 <meta property="og:description" content="如何离线安装 Nginx准备工作gcc 和 g++ 在 Linux 系统中必须有可以使用下面的命令来测试是否有 gcc 和 g++ 1yum install -y gcc gcc-c++ 也可以使用下面的命令 1gcc 提示你编译失败,就证明已经安装。 准备 Nginx 的安装包和 pcre zlib openssl 三个安装包我这里用的是 Nginx-1.3.1 pcre-8.31 zlib-1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-24T08:36:10.443Z">
+<meta property="og:updated_time" content="2019-06-26T01:24:00.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx">
 <meta name="twitter:description" content="如何离线安装 Nginx准备工作gcc 和 g++ 在 Linux 系统中必须有可以使用下面的命令来测试是否有 gcc 和 g++ 1yum install -y gcc gcc-c++ 也可以使用下面的命令 1gcc 提示你编译失败,就证明已经安装。 准备 Nginx 的安装包和 pcre zlib openssl 三个安装包我这里用的是 Nginx-1.3.1 pcre-8.31 zlib-1">
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  800
+                  1.2k
                 </span>
               
 
@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  5
                 </span>
               
             </div>
@@ -496,12 +496,23 @@
 <li>nginx 启动报: “[emerg] bind() to 0.0.0.0:XXXX failed(13: Permission denied)”</li>
 </ol>
 <p>解决方法: 1. 端口小于 1024 情况:<br>报错举例: “[emerg] bind() to 0.0.0.0:80 failed(13: Permission denied)”<br>原因是因为 1024 以下端口启动时需要 root 权限，所以切换到 root 下，在启动即可，但是这个不适合于我们这种在非 root 账号下启动 nginx 的需求。</p>
-<pre><code>2. 端口大于 1024 情况:
-报错举例: &quot;[emerg] bind() to 0.0.0.0:8300 failed(13: Permission denied)&quot;
-这种情况，我们需要先查询下 http 允许访问的端口:
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">semanage port -I | grep http_port_t</span><br><span class="line">http_port_t     tcp   80,81,443,488,8008,8009,8443,9000</span><br></pre></td></tr></table></figure>
-<pre><code>没有我们需要的端口，因此需要我们手动添加，执行下面的命令
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">semanage port -a -t http_port_t -p tcp 8300</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>端口大于 1024 情况:报错举例: “[emerg] bind() to 0.0.0.0:8300 failed(13: Permission denied)”这种情况，我们需要先查询下 http 允许访问的端口:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></table></figure>
+<p>没有我们需要的端口，因此需要我们手动添加，执行下面的命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">firewall-cmd --zone=public --add-port=8300/tcp --permanent    //（--permanent永久生效，没有此参数重启后失效）</span><br><span class="line"></span><br><span class="line">firewall-cmd --reload</span><br><span class="line"></span><br><span class="line">firewall-cmd --zone= public --query-port=80/tcp</span><br></pre></td></tr></table></figure>
+<h1 id="附录："><a href="#附录：" class="headerlink" title="附录："></a>附录：</h1><p>1.firewalld 的基本使用</p>
+<p>启动： systemctl start firewalld<br>查看状态： systemctl status firewalld<br>停止： systemctl disable firewalld<br>禁用： systemctl stop firewalld</p>
+<ol start="2">
+<li>systemctl 是 CentOS7 的服务管理工具中主要的工具，它融合之前 service 和 chkconfig 的功能于一体。</li>
+</ol>
+<p>启动一个服务：systemctl start firewalld.service<br>关闭一个服务：systemctl stop firewalld.service<br>重启一个服务：systemctl restart firewalld.service<br>显示一个服务的状态：systemctl status firewalld.service<br>在开机时启用一个服务：systemctl enable firewalld.service<br>在开机时禁用一个服务：systemctl disable firewalld.service<br>查看服务是否开机启动：systemctl is-enabled firewalld.service<br>查看已启动的服务列表：systemctl list-unit-files|grep enabled<br>查看启动失败的服务列表：systemctl –failed</p>
+<ol start="3">
+<li>配置 firewalld-cmd</li>
+</ol>
+<p>查看版本： firewall-cmd –version<br>查看帮助： firewall-cmd –help<br>显示状态： firewall-cmd –state<br>查看所有打开的端口： firewall-cmd –zone=public –list-ports<br>更新防火墙规则： firewall-cmd –reload<br>查看区域信息: firewall-cmd –get-active-zones<br>查看指定接口所属区域： firewall-cmd –get-zone-of-interface=eth0<br>拒绝所有包：firewall-cmd –panic-on<br>取消拒绝状态： firewall-cmd –panic-off<br>查看是否拒绝： firewall-cmd –query-panic</p>
+<h2 id="那怎么开启一个端口呢"><a href="#那怎么开启一个端口呢" class="headerlink" title="那怎么开启一个端口呢"></a>那怎么开启一个端口呢</h2><p>添加<br>firewall-cmd –zone=public –add-port=80/tcp –permanent （–permanent 永久生效，没有此参数重启后失效）<br>重新载入<br>firewall-cmd –reload<br>查看<br>firewall-cmd –zone= public –query-port=80/tcp<br>删除<br>firewall-cmd –zone= public –remove-port=80/tcp –permanent</p>
 
       
     </div>
@@ -787,7 +798,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何离线安装-Nginx"><span class="nav-number">1.</span> <span class="nav-text">如何离线安装 Nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gcc-和-g-在-Linux-系统中必须有"><span class="nav-number">1.1.1.</span> <span class="nav-text">gcc 和 g++ 在 Linux 系统中必须有</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备-Nginx-的安装包和-pcre-zlib-openssl-三个安装包"><span class="nav-number">1.1.2.</span> <span class="nav-text">准备 Nginx 的安装包和 pcre zlib openssl 三个安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Nginx-依赖包"><span class="nav-number">1.1.3.</span> <span class="nav-text">安装 Nginx 依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx-安装成功后，起项目报错问题以及解决办法"><span class="nav-number">1.1.4.</span> <span class="nav-text">Nginx 安装成功后，起项目报错问题以及解决办法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何离线安装-Nginx"><span class="nav-number">1.</span> <span class="nav-text">如何离线安装 Nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gcc-和-g-在-Linux-系统中必须有"><span class="nav-number">1.1.1.</span> <span class="nav-text">gcc 和 g++ 在 Linux 系统中必须有</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备-Nginx-的安装包和-pcre-zlib-openssl-三个安装包"><span class="nav-number">1.1.2.</span> <span class="nav-text">准备 Nginx 的安装包和 pcre zlib openssl 三个安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Nginx-依赖包"><span class="nav-number">1.1.3.</span> <span class="nav-text">安装 Nginx 依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx-安装成功后，起项目报错问题以及解决办法"><span class="nav-number">1.1.4.</span> <span class="nav-text">Nginx 安装成功后，起项目报错问题以及解决办法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录："><span class="nav-number">2.</span> <span class="nav-text">附录：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#那怎么开启一个端口呢"><span class="nav-number">2.1.</span> <span class="nav-text">那怎么开启一个端口呢</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -839,7 +850,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.9k字</span>
+  <span class="post-count">博客全站共9.3k字</span>
 </div>
 
 
