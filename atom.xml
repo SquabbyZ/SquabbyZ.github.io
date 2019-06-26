@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.zhuhaifeng.xyz/"/>
-  <updated>2019-06-26T01:24:00.227Z</updated>
+  <updated>2019-06-26T08:39:37.574Z</updated>
   <id>http://www.zhuhaifeng.xyz/</id>
   
   <author>
@@ -15,6 +15,69 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>win7系统80端口被系统占用问题</title>
+    <link href="http://www.zhuhaifeng.xyz/win7%E7%B3%BB%E7%BB%9F80%E7%AB%AF%E5%8F%A3%E8%A2%AB%E7%B3%BB%E7%BB%9F%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98/"/>
+    <id>http://www.zhuhaifeng.xyz/win7系统80端口被系统占用问题/</id>
+    <published>2019-06-26T08:16:20.000Z</published>
+    <updated>2019-06-26T08:39:37.574Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>#win7 系统 80 端口被系统占用问题</p><p>当你配置完 nginx 的 nginx.conf 文件之后，发现报错误: “nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)”<br>这个报错就是说，你的 80 端口已经被使用了</p><p>接下来我们就使用下面的命令来查查是被那个进程给占用了</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">netstat -ano|findstr 80</span><br></pre></td></tr></table></figure><p>发现被 Pid = 4 的进程占用了(一般查出来的占用进程的 Pid 不是 4 的情况下，直接 kill 掉就可以了)</p><p>直接上解决办法:</p><p>Win7 的 80 端口默认是被 System 进程占用的。<br>用如下方法可以解决 System 进程占用 80 端口的问题：</p><p>打开 RegEdit:开始-运行-输入 regedit-调出注册表<br>找到 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HTTP<br>找到一个 DWORD 值 Start，将其改为 0<br>重启电脑，System 进程将不会占用 80 端口</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Node.js---Basics(lesson2)</title>
+    <link href="http://www.zhuhaifeng.xyz/Node-js-Basics(lesson2)/"/>
+    <id>http://www.zhuhaifeng.xyz/Node-js-Basics(lesson2)/</id>
+    <published>2019-06-26T02:06:36.000Z</published>
+    <updated>2019-06-26T06:20:41.833Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Node-js-基础篇-lesson2"><a href="#Node-js-基础篇-lesson2" class="headerlink" title="Node.js 基础篇(lesson2)"></a>Node.js 基础篇(lesson2)</h1><p><strong><em>本系列博客借鉴的是”网易云课堂————LOOK 何老师的免费进阶课程《Node.js 进阶教程第一步(基础篇)》,地址:<a href="https://study.163.com/course/introduction/1003228034.htm&quot;" target="_blank" rel="noopener">https://study.163.com/course/introduction/1003228034.htm&quot;</a></em></strong></p><h2 id="安装配置并写-hello-js"><a href="#安装配置并写-hello-js" class="headerlink" title="安装配置并写 hello.js"></a>安装配置并写 hello.js</h2><p>本文主要讲解的是 node.js 的安装，与 demo hello.js 的练习</p><h2 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h2><ol><li>官方下载地址: <a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a> ,下载最新版的 node.js windows 安装版就可以了</li></ol><p>Linux 的安装版详见 我的博客的内容：<a href="https://www.zhuhaifeng.xyz/nodejsonCentos/#more">在 Centos 7.5 的腾讯云服务器上安装全局 Node.js</a></p><p>这里主要介绍在 windows 系统上安装 Node.js</p><p>直接把从官网上下载的 exe 文件，双击打开，一路 “下一步” 即可</p><p>由于 windows 系统的 CMD 我个人觉得用起来不是很舒服，因此我采用的是 git bash 来替代的 CMD</p><p>直接在百度搜索栏中键入 “Git for Windows”,默认搜索出来的第一个就是，或者官网地址： <a href="https://gitforwindows.org/" target="_blank" rel="noopener">https://gitforwindows.org/</a></p><p>首页中间部分有个 “Download” 按钮，直接点击就可以了</p><p>下载后也是一路的 “下一步” 即可。安装完成后，可以在任意的位置点击鼠标右键，弹出的菜单栏中有两个带 “bash” 的操作指令 “Git Bash Here” 和 “Git GUI Here”,选择 <strong>“Git Bash Here”</strong></p><p>然后输入</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure><p>，显示版本号，就证明 node.js 安装成功<br>windows 版本的 node.js 安装包，默认把 npm 同时安装上</p><p>再输入</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure><p>,显示版本号，就证明 npm 安装成功。</p><h2 id="hello-js"><a href="#hello-js" class="headerlink" title="hello.js"></a>hello.js</h2><h3 id="先上完整的-demo-代码"><a href="#先上完整的-demo-代码" class="headerlink" title="先上完整的 demo 代码"></a>先上完整的 demo 代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var http = require(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="keyword">function</span> (request, response) &#123;</span><br><span class="line">    response.writeHead(200, &#123; <span class="string">"Content-Type"</span>: <span class="string">'text/html; charset=utf-8'</span> &#125;);</span><br><span class="line">    <span class="keyword">if</span> (request.url !== <span class="string">'/favicon.ico'</span>) &#123; //加入该条件是为了防止浏览器内部机制造成的2次访问</span><br><span class="line">        console.log(<span class="string">'访问'</span>);</span><br><span class="line">        response.write(<span class="string">'hello,world'</span>);</span><br><span class="line">        response.end(<span class="string">'hello,世界'</span>);//不写的话则没有 http 协议尾，浏览器会一起处于加载的状态，但是写上后会产生两次访问</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;).listen(8000);</span><br><span class="line">console.log(<span class="string">"Server is running at http://localhost:8000/ or http://127.0.0.1:8000/"</span>)</span><br></pre></td></tr></table></figure><p>然后在该文件所在的文件夹内点击右键，选择 “Git Bash Here”,然后输入下面的命令后，输入下面的命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node hello.js</span><br></pre></td></tr></table></figure><p>看到”Server is running at <a href="http://localhost:8000/" target="_blank" rel="noopener">http://localhost:8000/</a> or <a href="http://127.0.0.1:8000/&quot;,表示启动成功。" target="_blank" rel="noopener">http://127.0.0.1:8000/&quot;,表示启动成功。</a></p><h3 id="现在来详细讲解下-Demo-中各部分的含义"><a href="#现在来详细讲解下-Demo-中各部分的含义" class="headerlink" title="现在来详细讲解下 Demo 中各部分的含义"></a>现在来详细讲解下 Demo 中各部分的含义</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var http = require(<span class="string">'http'</span>);</span><br></pre></td></tr></table></figure><p>上面的语句的意思是，声明一个 var 变量 http 给其赋值为 node.js 中的 http</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">http.createServer(<span class="keyword">function</span> (request, response) &#123;</span><br><span class="line">    response.writeHead(200, &#123; <span class="string">"Content-Type"</span>: <span class="string">'text/html; charset=utf-8'</span> &#125;);</span><br><span class="line">    <span class="keyword">if</span> (request.url !== <span class="string">'/favicon.ico'</span>) &#123; //加入该条件是为了防止浏览器内部机制造成的2次访问</span><br><span class="line">        console.log(<span class="string">'访问'</span>);</span><br><span class="line">        response.write(<span class="string">'hello,world'</span>);</span><br><span class="line">        response.end(<span class="string">'hello,世界'</span>);//不写的话则没有 http 协议尾，浏览器会一起处于加载的状态，但是写上后会产生两次访问</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;).listen(8000);</span><br></pre></td></tr></table></figure><p>“createServer” http 中有一个方法，是创建服务，他里面放一个函数，函数中有两个参数, “request”为请求时携带的参数 “response”为请求结果返回的参数</p><p>“response.writeHead”为，给 “response”写请求头，其内部包括: 1. 返回状态码:200; 2.内容类型为’text/html; charset=utf-8’</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Node.js---Basics(lesson1)</title>
+    <link href="http://www.zhuhaifeng.xyz/Node-js-Basics(lesson1)/"/>
+    <id>http://www.zhuhaifeng.xyz/Node-js-Basics(lesson1)/</id>
+    <published>2019-06-26T01:26:09.000Z</published>
+    <updated>2019-06-26T02:05:23.461Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Node-js-基础篇-lesson1"><a href="#Node-js-基础篇-lesson1" class="headerlink" title="Node.js 基础篇(lesson1)"></a>Node.js 基础篇(lesson1)</h1><p><strong><em>本系列博客借鉴的是”网易云课堂————LOOK 何老师的免费进阶课程《Node.js 进阶教程第一步(基础篇)》,地址:<a href="https://study.163.com/course/introduction/1003228034.htm&quot;" target="_blank" rel="noopener">https://study.163.com/course/introduction/1003228034.htm&quot;</a></em></strong></p><h2 id="什么是-Node-js"><a href="#什么是-Node-js" class="headerlink" title="什么是 Node.js"></a>什么是 Node.js</h2><ol><li>编写高性能网络服务器的 Javascript 工具包(用 JS 开发服务端程序)</li><li>单线程、异步、事件驱动</li><li>特点：快、耗内存多</li><li>异步小号内存测试:<br>网络上一个百万级并发测试,未优化的前提下, 1M 的连接量,消耗了 16G 的内存</li></ol><h2 id="Node-js-vs-PHP"><a href="#Node-js-vs-PHP" class="headerlink" title="Node.js vs PHP"></a>Node.js vs PHP</h2><ol><li><p>优点:</p><p>性能高,(机制问题)<br>开发效率高,(省不少优化的事)<br>应用范围广(可以开发桌面系统, electrom 框架)</p></li><li><p>缺点</p><p>新、人少<br>中间间少<br>IDE 不完善</p></li></ol><h2 id="Node-js-的劣势和解决方案"><a href="#Node-js-的劣势和解决方案" class="headerlink" title="Node.js 的劣势和解决方案"></a>Node.js 的劣势和解决方案</h2><ol><li>默认不支持多核，但是用 cluster 可以解决</li><li>默认不支持服务器集群, node-http-proxy 可以解决</li><li>使用 Nginx 做负载均衡,静态的有 Nginx 处理,动态的由 node.js 处理</li><li>forever 或 node-cluster 实现灾难恢复</li></ol><h2 id="框架选择"><a href="#框架选择" class="headerlink" title="框架选择"></a>框架选择</h2><ol><li>比较热门的包括: express、koa、Hapi<br>以及 express 基础之上的 sails</li><li><p>express: 完善、稳定、文档全、社区大</p></li><li><p>koa: 超前,正在完善中</p></li><li><p>Hapi: 复杂(一个简单的 hello,world 都要做很多堆砌),适合复杂的大型项目</p></li></ol><h2 id="本教程学习路径"><a href="#本教程学习路径" class="headerlink" title="本教程学习路径"></a>本教程学习路径</h2><ol><li><p>node.js 基础</p></li><li><p>Express 框架</p></li><li><p>sails 框架</p></li><li><p>项目</p></li><li><p>sails + vue.js</p></li><li><p>sails + react</p></li></ol><h2 id="编辑器的选择"><a href="#编辑器的选择" class="headerlink" title="编辑器的选择"></a>编辑器的选择</h2><p>个人目前在使用的是 VsCode，基于使用的时间较长比较顺手，推荐新手使用 sublime 熟悉下，然后可以用 webstorm 、VsCode 或者是 IDEA</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Nginx</title>
