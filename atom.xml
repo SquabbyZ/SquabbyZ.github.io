@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.zhuhaifeng.xyz/"/>
-  <updated>2019-06-26T08:39:37.574Z</updated>
+  <updated>2019-06-26T08:41:51.144Z</updated>
   <id>http://www.zhuhaifeng.xyz/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>win7系统80端口被系统占用问题</title>
-    <link href="http://www.zhuhaifeng.xyz/win7%E7%B3%BB%E7%BB%9F80%E7%AB%AF%E5%8F%A3%E8%A2%AB%E7%B3%BB%E7%BB%9F%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98/"/>
-    <id>http://www.zhuhaifeng.xyz/win7系统80端口被系统占用问题/</id>
+    <link href="http://www.zhuhaifeng.xyz/win7Of80isUsed/"/>
+    <id>http://www.zhuhaifeng.xyz/win7Of80isUsed/</id>
     <published>2019-06-26T08:16:20.000Z</published>
-    <updated>2019-06-26T08:39:37.574Z</updated>
+    <updated>2019-06-26T08:41:51.144Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>#win7 系统 80 端口被系统占用问题</p><p>当你配置完 nginx 的 nginx.conf 文件之后，发现报错误: “nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)”<br>这个报错就是说，你的 80 端口已经被使用了</p><p>接下来我们就使用下面的命令来查查是被那个进程给占用了</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">netstat -ano|findstr 80</span><br></pre></td></tr></table></figure><p>发现被 Pid = 4 的进程占用了(一般查出来的占用进程的 Pid 不是 4 的情况下，直接 kill 掉就可以了)</p><p>直接上解决办法:</p><p>Win7 的 80 端口默认是被 System 进程占用的。<br>用如下方法可以解决 System 进程占用 80 端口的问题：</p><p>打开 RegEdit:开始-运行-输入 regedit-调出注册表<br>找到 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HTTP<br>找到一个 DWORD 值 Start，将其改为 0<br>重启电脑，System 进程将不会占用 80 端口</p>]]></content>
     
