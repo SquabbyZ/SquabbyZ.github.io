@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.zhuhaifeng.xyz/CentosInstallJDK/</loc>
+    <lastmod>2019-07-03</lastmod>
+  </url>  <url>
+    <loc>http://www.zhuhaifeng.xyz/CentosOrder/</loc>
+    <lastmod>2019-07-03</lastmod>
+  </url>  <url>
+    <loc>http://www.zhuhaifeng.xyz/regexpAll/</loc>
+    <lastmod>2019-07-03</lastmod>
+  </url>  <url>
+    <loc>http://www.zhuhaifeng.xyz/elasticsearch/</loc>
+    <lastmod>2019-07-02</lastmod>
+  </url>  <url>
     <loc>http://www.zhuhaifeng.xyz/Nginx/</loc>
     <lastmod>2019-06-27</lastmod>
   </url>  <url>
@@ -13,14 +25,8 @@
     <loc>http://www.zhuhaifeng.xyz/Node-js-Basics(lesson1)/</loc>
     <lastmod>2019-06-26</lastmod>
   </url>  <url>
-    <loc>http://www.zhuhaifeng.xyz/elasticsearch/</loc>
-    <lastmod>2019-06-20</lastmod>
-  </url>  <url>
     <loc>http://www.zhuhaifeng.xyz/nodejsonCentos/</loc>
     <lastmod>2019-06-17</lastmod>
-  </url>  <url>
-    <loc>http://www.zhuhaifeng.xyz/regexpAll/</loc>
-    <lastmod>2019-05-27</lastmod>
   </url>  <url>
     <loc>http://www.zhuhaifeng.xyz/iframe/</loc>
     <lastmod>2019-05-27</lastmod>

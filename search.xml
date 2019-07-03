@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CentosInstallJDK]]></title>
+    <url>%2FCentosInstallJDK%2F</url>
+    <content type="text"><![CDATA[在 centos 的系统上安装 JDK 查看 yum 中管理的可以使用的 JDK 软件的包列表 1yum search java | grep -i --color JDK 根据显示的列表选择合适的版本,安装 JDK ,我选择的是 “java-1.8.0-openjdk-devel.x86_64” 1yum install java-1.8.0-openjdk-devel.x86_64 一顿安装完成之后,配置环境变量，打开 etc 文件夹下的 profile 文件 1vim /etc/profile 在文件夹内上面的注释下面添加如下的环境配置代码:(找到位置后按 大写的 O,就可以添加一行开始编辑了) 123export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.71-2.b15.el7_2.x86_64export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jarexport PATH=$PATH:$JAVA_HOME/bin 4.先按 Esc，然后在输入 “:wq”,回车即可,文件就被保存了,然后执行，让配置生效： 1source /etc/profile 可以在命令行输入 “java -version” 显示出“openjdk version “1.8.0_212”OpenJDK Runtime Environment (build 1.8.0_212-b04)OpenJDK 64-Bit Server VM (build 25.212-b04, mixed mode)“,即为安装成功。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[CentosOrder]]></title>
+    <url>%2FCentosOrder%2F</url>
+    <content type="text"><![CDATA[Centos 学习1. 添加新用户并授权（一） 创建一个 Jack 用户12345cd /homeadduser Jackls 可以看到在 home 目录下生成了一个名字为 Jack 的文件夹 （二） 为 Jack 用户设置密码1passwd Jack 命令行中会弹出 :”Changing password for user Jack.New password: “ 输入你的密码,我在这里设置的密码是：123456,你按回车之后，系统会提示你:”BAD PASSWORD: The password fails the dictionary check - it is too simplistic/systematic”,可以不用理会，这个是告诉你，你设置的密码太简单了,由于我们只是作为测试，所以忽略这个警告。 紧接着就会弹出:”Retype new password:”,意思是让你确认密码。输入完成后系统提示:”passwd: all authentication tokens updated successfully.”,就证明用户密码设置成功。 (三) 新 Jack 用户进行 sudo 操作的授权因为 sudo 命令是在 sudoers 文件中的，我们看一下 sudoers 文件所在的位置 1whereis sudoers 命令行窗口输出的内容就显示出了，我们所要找的文件所在的位置:”sudoers: /etc/sudoers /etc/sudoers.d /usr/share/man/man5/sudoers.5.gz“ （五）查看一下文件的权限1ls -l /etc/sudoers 输出的显示为:”-r–r—–. 1 root root 3938 Apr 11 2018 /etc/sudoers” 可以看到只有只读的权限，这时候我们要加入一个可写的（w）的权限 （六）加入可写的权限1chmod -v u+w /etc/sudoers 命令行显示内容为:”mode of ‘/etc/sudoers’ changed from 0440 (r–r—–) to 0640 (rw-r—–)” （七）把 Jack 用户添加到 sudoers 中1vim /etc/sudoers 打开 sudoers 文件开始编辑 我的腾讯云服务器会提示如下信息: E325: ATTENTIONFound a swap file by the name “/etc/.sudoers.swp”owned by: root dated: Wed Jul 3 09:57:38 2019file name: /etc/sudoersmodified: YESuser name: root host name: VM_0_9_centosprocess ID: 16454While opening file “/etc/sudoers”dated: Wed Jul 3 10:08:11 2019NEWER than swap file! (1) Another program may be editing the same file. If this is the case,be careful not to end up with two different instances of the samefile when making changes. Quit, or continue with caution.(2) An edit session for this file crashed.If this is the case, use “:recover” or “vim -r /etc/sudoers”to recover the changes (see “:help recovery”).If you did this already, delete the swap file “/etc/.sudoers.swp”to avoid this message.“/etc/sudoers” 114L, 3967CPress ENTER or type command to continue 只需要按回车键就可以正常进入到文件的编辑 然后输入 “/“,在之后输入 “All”,然后定位到要修改的内容的位置,在查到的位置上加入 “Jack ALL=(ALL) ALL” 加完之后的效果为： “ ## Allow root to run any commands anywhereroot ALL=(ALL) ALLJack ALL=(ALL) ALL“ 如果是 输入错误了，按 “ctrl + c”,再按 “ctrl + z”,就退出了,如果是正常的保存，就按两次大写的 “Z” 就保存退出了。 （八）wq 保存，然后把 sudoers 文件权限改回去，毕竟这是一个重要的文件1chmod -v u-w /etc/sudoers 命令行显示: “mode of ‘/etc/sudoers’ changed from 0640 (rw-r—–) to 0440 (r–r—–)” （九）测试新用户 admin 进行登陆，使用 su Jack 操作到此，新增 admin 并且授权 sudo 就完成了. 本文借鉴：https://blog.csdn.net/xudailong_blog/article/details/80518266]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[win7系统80端口被系统占用问题]]></title>
     <url>%2Fwin7Of80isUsed%2F</url>
     <content type="text"><![CDATA[#win7 系统 80 端口被系统占用问题 当你配置完 nginx 的 nginx.conf 文件之后，发现报错误: “nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)”这个报错就是说，你的 80 端口已经被使用了 接下来我们就使用下面的命令来查查是被那个进程给占用了 12netstat -ano|findstr 80 发现被 Pid = 4 的进程占用了(一般查出来的占用进程的 Pid 不是 4 的情况下，直接 kill 掉就可以了) 直接上解决办法: Win7 的 80 端口默认是被 System 进程占用的。用如下方法可以解决 System 进程占用 80 端口的问题： 打开 RegEdit:开始-运行-输入 regedit-调出注册表找到 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HTTP找到一个 DWORD 值 Start，将其改为 0重启电脑，System 进程将不会占用 80 端口]]></content>
@@ -28,12 +38,12 @@
   <entry>
     <title><![CDATA[elasticsearch]]></title>
     <url>%2Felasticsearch%2F</url>
-    <content type="text"><![CDATA[elasticsearch 数据库要加入权限控制，使用的是 x-pack 插件，前端直接访问数据库的时候，只需要在 ajax 请求的加入 12345678910$.ajax(&#123; url: "ES数据库地址", type: "POST/GET", data: "传入的数据", contentType: "application/json", beforeSend: function(xhr) &#123; xhr.setRequestHeader("Authorization", `Basic $&#123;btoa("username:password")&#125;`); &#125;, success: function(result) &#123;&#125;&#125;); 会涉及到跨域的问题，要将 es 配置文件中涉及到跨域的地方打开，包括带请求头的部分 es 数据库修改密码这里测试的账户为: elastic 1234curl -u elastic -XPUT 'http://192.168.1.11:9200/_xpack/security/user/elastic/_password?pretty' -H 'Content-Type: application/json' -d'&#123; "password" : "new_password"&#125;' 其中 192.168.1.11为 es 数据库的地址 IP 参考地址： https://www.jianshu.com/p/2ecac3ae1b67]]></content>
+    <content type="text"><![CDATA[elasticsearch 数据库要加入权限控制，使用的是 x-pack 插件，前端直接访问数据库的时候，只需要在 ajax 请求的加入 12345678910$.ajax(&#123; url: "ES数据库地址", type: "POST/GET", data: "传入的数据", contentType: "application/json", beforeSend: function(xhr) &#123; xhr.setRequestHeader("Authorization", `Basic $&#123;btoa("username:password")&#125;`); &#125;, success: function(result) &#123;&#125;&#125;); 会涉及到跨域的问题，要将 es 配置文件中涉及到跨域的地方打开，包括带请求头的部分 es 数据库修改密码这里测试的账户为: elastic 1234curl -u elastic -XPUT 'http://192.168.1.11:9200/_xpack/security/user/elastic/_password?pretty' -H 'Content-Type: application/json' -d'&#123; "password" : "new_password"&#125;' 其中 192.168.1.11为 es 数据库的地址 IP 参考地址： https://www.jianshu.com/p/2ecac3ae1b67 附录: 在 Linux 系统上打包命令: 12tar -cvf 想要起的包名字.tar 要打包的文件夹名/ 查看内存 12df -h 查看 ElasticSearch 数据库的服务是否在运行的指令 12]]></content>
   </entry>
   <entry>
     <title><![CDATA[regexpAll]]></title>
     <url>%2FregexpAll%2F</url>
-    <content type="text"><![CDATA[前端常用的正则表达式大全1. 匹配用户名规则描述: · 长度 4-6 位： {4,16}· 字母： [a-z][a-z]· 数字： [0-9]· 下划线： [_]· 减号： [-]]]></content>
+    <content type="text"><![CDATA[前端常用的正则表达式大全1. 匹配用户名规则描述: · 长度 4-6 位： {4,16}· 字母： [a-z][a-z]· 数字： [0-9]· 下划线： [_]· 减号： [-]· 结尾加上 i 是不区分大小写· 结尾加上 g 是全部匹配· / / 内]]></content>
   </entry>
   <entry>
     <title><![CDATA[同心圆坐标算法]]></title>
