@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="SquabbyZ的小黑屋">
 <meta property="og:description" content="如何离线安装 Nginx准备工作gcc 和 g++ 在 Linux 系统中必须有可以使用下面的命令来测试是否有 gcc 和 g++ 1yum install -y gcc gcc-c++ 也可以使用下面的命令 1gcc 提示你编译失败,就证明已经安装。 准备 Nginx 的安装包和 pcre zlib openssl 三个安装包我这里用的是 Nginx-1.3.1 pcre-8.31 zlib-1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-08T09:00:58.037Z">
+<meta property="og:updated_time" content="2019-07-10T08:46:13.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx">
 <meta name="twitter:description" content="如何离线安装 Nginx准备工作gcc 和 g++ 在 Linux 系统中必须有可以使用下面的命令来测试是否有 gcc 和 g++ 1yum install -y gcc gcc-c++ 也可以使用下面的命令 1gcc 提示你编译失败,就证明已经安装。 准备 Nginx 的安装包和 pcre zlib openssl 三个安装包我这里用的是 Nginx-1.3.1 pcre-8.31 zlib-1">
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.4k
+                  1.6k
                 </span>
               
 
@@ -514,6 +514,11 @@
 </ol>
 <p>解决方法: 在 nginx 安装的目录下，进入到 conf/ 目录里，打开 nginx.conf 文件，在 http:{}中加入下面的代码即可</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">server_tokens off;</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>nginx 启动报错:” forbidden 403 “</li>
+</ol>
+<p>解决方法：<br>/conf/nginx.conf 中设置 user : 你运行的 ./nginx 的当前用户<br>或者用 “ll” 命令查看，你装 nginx 的那个目录的所有者是不是你当前的用户。</p>
+<p>7 nginx 启动正常， curl 地址 显示正常，就是浏览器无法访问<br>解决办法：把对应的端口打开即可<br>firewall-cmd –zone=public –add-port=你要添加的端口/tcp –permanent （–permanent 永久生效，没有此参数重启后失效）<br>systemctl restart firewalld.service 即可。</p>
 <h1 id="附录："><a href="#附录：" class="headerlink" title="附录："></a>附录：</h1><p>1.firewalld 的基本使用</p>
 <p>启动： systemctl start firewalld<br>查看状态： systemctl status firewalld<br>停止： systemctl disable firewalld<br>禁用： systemctl stop firewalld</p>
 <ol start="2">
@@ -524,7 +529,7 @@
 <li>配置 firewalld-cmd</li>
 </ol>
 <p>查看版本： firewall-cmd –version<br>查看帮助： firewall-cmd –help<br>显示状态： firewall-cmd –state<br>查看所有打开的端口： firewall-cmd –zone=public –list-ports<br>更新防火墙规则： firewall-cmd –reload<br>查看区域信息: firewall-cmd –get-active-zones<br>查看指定接口所属区域： firewall-cmd –get-zone-of-interface=eth0<br>拒绝所有包：firewall-cmd –panic-on<br>取消拒绝状态： firewall-cmd –panic-off<br>查看是否拒绝： firewall-cmd –query-panic</p>
-<h2 id="那怎么开启一个端口呢"><a href="#那怎么开启一个端口呢" class="headerlink" title="那怎么开启一个端口呢"></a>那怎么开启一个端口呢</h2><p>添加<br>firewall-cmd –zone=public –add-port=80/tcp –permanent （–permanent 永久生效，没有此参数重启后失效）<br>重新载入<br>firewall-cmd –reload<br>查看<br>firewall-cmd –zone= public –query-port=80/tcp<br>删除<br>firewall-cmd –zone= public –remove-port=80/tcp –permanent</p>
+<h2 id="那怎么开启一个端口呢"><a href="#那怎么开启一个端口呢" class="headerlink" title="那怎么开启一个端口呢"></a>那怎么开启一个端口呢</h2><p>添加<br>firewall-cmd –zone=public –add-port=80/tcp –permanent （–permanent 永久生效，没有此参数重启后失效）<br>重新载入<br>firewall-cmd –reload<br>或者<br>systemctl restart firewalld.service<br>查看<br>firewall-cmd –zone= public –query-port=80/tcp<br>删除<br>firewall-cmd –zone= public –remove-port=80/tcp –permanent</p>
 <p>nginx 启动 命令 ./nginx<br>nginx 关闭命令 ./nginx -s stop<br>nginx 查看端口是否启动命名 ps -aux | grep nginx</p>
 <p><strong>把当前文件夹的所有者修改为 owner 的方法</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown owner * -R</span><br></pre></td></tr></table></figure>
@@ -871,7 +876,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共12.1k字</span>
+  <span class="post-count">博客全站共12.2k字</span>
 </div>
 
 
